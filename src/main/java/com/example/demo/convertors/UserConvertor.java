@@ -12,21 +12,20 @@ import java.util.UUID;
 @Component
 public class UserConvertor {
 
-    public User toUser(UserRequest userRequest){
+    public UserRequest toRequest(User user){
     UUID uuid = UUID.randomUUID();
-        return User.builder()
-            .firstName(userRequest.getFirstName())
-            .lastName((userRequest.getLastName()))
-            .email(userRequest.getEmail())
-            .phoneNumber(userRequest.getPhoneNumber())
-            .build();
+        return UserRequest.builder()
+                .firstName(user.getFirstName())
+                .lastName(user.getLastName())
+                .email(user.getEmail())
+                .phoneNumber(user.getPhoneNumber())
+                .build();
+
     }
     public UserResponse toResponse(User user){
         return UserResponse.builder()
                 .firstName(user.getFirstName())
                 .lastName(user.getLastName())
-                .email(user.getEmail())
-                .phoneNumber(user.getPhoneNumber())
                 .build();
     }
 }

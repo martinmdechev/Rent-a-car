@@ -2,15 +2,13 @@ package com.example.demo.dtos;
 
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 public class UserRequest {
     @Size(min = 2, message = "Client first name should contain more than 2 characters")
     private String firstName;
@@ -31,6 +29,5 @@ public class UserRequest {
 
     @Size(min = 10, message = "Phone number must be at least 10 characters")
     private String phoneNumber;
-
 
 }

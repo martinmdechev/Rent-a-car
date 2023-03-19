@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 
 @Repository
-public interface ReservationRepository extends JpaRepository {
+public interface ReservationRepository extends JpaRepository<Reservation, Long> {
     Set<Reservation> findByUser(Long id);
 
     @Query(nativeQuery = true, value = "SELECT * FROM reservations WHERE pickUpDate BETWEEN ?1 AND ?2 OR returnDate BETWEEN ?1 AND ?2")

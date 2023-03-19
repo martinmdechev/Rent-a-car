@@ -7,10 +7,9 @@ import com.example.demo.services.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
-
 @Service
 public class CarServiceImpl implements CarService {
+    @Autowired
     private final CarRepository carRepository;
     @Autowired
     public CarServiceImpl(CarRepository carRepository) {
